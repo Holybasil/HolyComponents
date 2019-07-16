@@ -1,11 +1,11 @@
 {
   "name": "holy-components",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "main": "./dist/holycomponents.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-component": "vue-cli-service build --target lib --name holycomponents ./src/components/index.js",
+    "build-component": "vue-cli-service build --target lib --name holycomponents ./src/main.js",
     "lint": "vue-cli-service lint"
   },
   "files": [

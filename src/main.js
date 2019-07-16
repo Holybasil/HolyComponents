@@ -1,10 +1,15 @@
-import Vue from "vue";
-import App from "./App.vue";
-// import router from "./router";
-import "./components";
+import * as components from "./components";
 
-Vue.config.productionTip = false;
+const install = function(Vue, options = {}) {
+  for (const componentName in components) {
+    const component = components[componentName];
 
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+    Vue.component(component.name, component);
+  }
+};
+
+export default { install, ...components };
+
+if (typeof window !== "undefined" && window.Vue) {
+  install(window.vue);
+}

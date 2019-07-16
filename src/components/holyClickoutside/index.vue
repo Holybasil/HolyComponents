@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "HolyClickoutside",
   data() {
     return {
       clickTarget: null,

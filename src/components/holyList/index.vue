@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  name: "HolyList",
   data() {
     return {
       addFlag: false,
@@ -35,7 +36,8 @@ export default {
       type: Array
     },
     emptyText: {
-      type: String
+      type: String,
+      default: "暂无数据"
     }
   },
   computed: {
