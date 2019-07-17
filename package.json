@@ -1,6 +1,6 @@
 {
   "name": "holy-components",
-  "version": "0.1.5",
+  "version": "0.1.10",
   "main": "./dist/holycomponents.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -26,6 +26,7 @@
     "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",
