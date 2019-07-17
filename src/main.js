@@ -6,13 +6,8 @@ const install = function(Vue, options = {}) {
     Vue.component(component.name, component);
   }
 };
-// const exportComponents  = {}
-// for (const componentName in components) {
-//   exportComponents[componentName] = components[componentName];
-// }
-console.log(components, 'components')
-export { ...components };
-export default { install };
+
+export default { install, ...components };
 
 if (typeof window !== "undefined" && window.Vue) {
   install(window.vue);
