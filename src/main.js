@@ -8,6 +8,7 @@ const install = function(Vue, options = {}) {
 };
 
 export default { install, ...components };
+// export default { install };
 
 if (typeof window !== "undefined" && window.Vue) {
   install(window.vue);

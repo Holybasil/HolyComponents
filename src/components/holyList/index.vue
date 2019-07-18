@@ -2,14 +2,16 @@
   <ul class="holyList" v-if="data.length">
     <li
       v-for="(item, index) in data"
-      :key="item.id"
-      :class="{ highlight: value.find(node => node.id === item.id) }"
+      :Key="item[nodeKey]"
+      :class="{
+        highlight: value.find(node => node[nodeKey] === item[nodeKey])
+      }"
       @click.exact="clickItem(item, index)"
       @click.meta="addItem(item)"
       @click.shift="selectUntilItem(item, index)"
-      @mousedown="allowMousemove"
+      @mousedown="allowMousemove(item)"
       @mousemove="addMoveItem(item)"
-      @mouseup="banMousemove"
+      @mouseup="banMousemove(item)"
     >
       {{ item.label }}
     </li>
@@ -38,7 +40,14 @@ export default {
     emptyText: {
       type: String,
       default: "暂无数据"
+    },
+    "node-Key": {
+      type: String,
+      default: "id"
     }
+  },
+  created() {
+    console.log(this.data, "data");
   },
   computed: {
     selected: {
@@ -56,23 +65,29 @@ export default {
       this.currentIndex = index;
     },
     addItem(item) {
-      if (this.selected.find(node => node.id === item.id)) {
-        this.selected = this.selected.filter(node => node.id !== item.id);
+      if (
+        this.selected.find(node => node[this.nodeKey] === item[this.nodeKey])
+      ) {
+        this.selected = this.selected.filter(
+          node => node[this.nodeKey] !== item[this.nodeKey]
+        );
       } else {
         this.selected = [...this.selected, item];
       }
     },
-    allowMousemove() {
+    allowMousemove(item) {
       this.addFlag = true;
     },
     addMoveItem(item) {
       if (this.addFlag) {
-        if (!this.selected.find(node => node.id === item.id)) {
+        if (
+          !this.selected.find(node => node[this.nodeKey] === item[this.nodeKey])
+        ) {
           this.selected = [...this.selected, item];
         }
       }
     },
-    banMousemove() {
+    banMousemove(item) {
       this.addFlag = false;
     },
     selectUntilItem(item, index) {
@@ -85,6 +100,10 @@ export default {
 
 <style lang="scss" scoped>
 ul.holyList {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 240px;
+  overflow: scroll;
   list-style: none;
   background-color: #fff;
   li {
@@ -99,7 +118,7 @@ ul.holyList {
 div.holyList {
   text-align: center;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #ffdead;
   p {
     position: relative;
     margin-top: 50%;
