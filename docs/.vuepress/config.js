@@ -1,4 +1,5 @@
 module.exports = {
+  base: "/HolyComponents/",
   title: "Holy Components",
   description: 'Some inexplicable components you may need',
 
