@@ -26,7 +26,8 @@ module.exports = {
           children: ['holyList','holyClickoutside'],
         }
       ]
-    }
+    },
+    lastUpdated: 'Last Updated',
         
   }
 }

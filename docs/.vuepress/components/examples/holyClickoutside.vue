@@ -1,14 +1,5 @@
 <template>
   <div>
-    <!-- <div class="content">
-      <div
-        class="right"
-        :class="{ highlight: holy === 'right' }"
-        @click="holy = 'right'"
-      >
-        我是右边
-      </div>
-    </div> -->
     <div class="content">
       <HolyClickoutside :except="['.right']" @handle="handleClickoutside">
         <div

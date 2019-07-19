@@ -1,0 +1,46 @@
+
+div[class*="language-"]::before{
+  color: #FF9300;
+}
+code{
+  color: #483c32 !important;
+  // 标签名
+  .token.tag, .token.namespace, .token.deleted{
+    color:#C91F37;
+  }
+  // 属性名
+  .token.attr-name{
+    color:#F45F6C;
+  }
+  // 属性值
+  .token.attr-value{
+    color: #4C556E
+  }
+  // 尖括号和双引号
+  .token.punctuation{
+    // color: #424C50
+    color:#86869E;
+  }
+  // js 中的关键字
+  .token.selector, .token.important, .token.atrule, .token.keyword, .token.builtin{
+    color:#6A6DB0;
+  }
+  .token.language-javascript{
+    }
+  // css 属性名
+  .token.property{
+    color: #D2691E;
+  }
+  // 文本字符串
+  .token.string{
+    color:#86869E
+  }
+  
+
+}
+ul{
+  margin-block-start:0;
+  margin-block-end:0;
+  padding-left: 0;
+  line-height: unset;
+}

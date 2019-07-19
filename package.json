@@ -8,7 +8,8 @@
     "build-component": "vue-cli-service build --target lib --name holycomponents ./src/main.js",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy":"bash deploy.sh"
   },
   "files": [
     "dist/*",
@@ -34,5 +35,6 @@
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.0.0-rc.1"
-  }
+  },
+  "license": "MIT"
 }
